@@ -888,18 +888,22 @@ h2.hero-role {
   .hero-ctas { flex-direction: column; }
   .btn { width: 100%; justify-content: center; }
 
-  .hero-visual { height: 320px; }
+  /* Deck above text on mobile */
+  .hero-visual { height: 280px; order: -1; }
 
   .panel-2, .panel-3 { display: none; }
-  .panel-1 { width: 88%; left: 6%; top: 10px; }
+  .panel-1 { width: 90%; left: 5%; top: 8px; }
 
-  .stat-1 { top: auto; bottom: 80px; right: 8px; }
-  .stat-2 { top: auto; bottom: 20px; right: 8px; }
-  .stat-3 { display: none; }
+  /* Stat cards overlap the panel on narrow screens — hide them */
+  .stat-1, .stat-2, .stat-3 { display: none; }
 
   /* Hide elements that don't fit mobile hero */
   .live-bar { display: none; }
   .connection-nodes { display: none; }
+
+  /* About bento — 1 column on phones */
+  .bento-grid { grid-template-columns: 1fr; }
+  .bio-card    { grid-column: span 1; }
 
   /* Timeline */
   .timeline-card { padding: 1.25rem; }
