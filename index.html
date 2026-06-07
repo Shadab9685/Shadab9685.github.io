@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shadab Alam — Software Developer</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Shadab Alam — Software Developer and .NET Backend Engineer. CS graduate with hands-on experience building RESTful APIs using ASP.NET Core, Azure Blob Storage, and SQL Server." />
+  <meta name="keywords" content="Shadab Alam, Software Developer, .NET Developer, ASP.NET Core, Backend Developer, C#, SQL Server, Azure, REST API, Portfolio" />
+  <meta name="author" content="Shadab Alam" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (LinkedIn, WhatsApp, Facebook previews) -->
+  <meta property="og:title" content="Shadab Alam — Software Developer" />
+  <meta property="og:description" content="CS graduate with hands-on experience building RESTful APIs in a production healthcare app using ASP.NET Core, Azure Blob Storage, and SQL Server." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shadabalam.dev" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Shadab Alam — Software Developer" />
+  <meta name="twitter:description" content="CS graduate with hands-on experience building RESTful APIs in a production healthcare app using ASP.NET Core, Azure Blob Storage, and SQL Server." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/hero.css" />
+</head>
+<body>
+
+  <!-- ─── Scroll Progress Bar ──────────────────────── -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+
+  <!-- ─── Cursor ─────────────────────────────────────── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ─── Background canvas (Three.js) ─────────────── -->
+  <canvas id="heroCanvas"></canvas>
+
+  <!-- ─── Background decoration ────────────────────── -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ─── Noise overlay ─────────────────────────────── -->
+  <div class="noise-overlay"></div>
+
+  <!-- ─── Navigation ────────────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-badge">SA</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;to=Shadabalam9685%40gmail.com&amp;su=Hiring%20Inquiry" target="_blank" rel="noopener" class="nav-cta">Hire Me</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── Hero Section ──────────────────────────────── -->
+  <section class="hero" id="hero">
+
+    <!-- Left: Text content -->
+    <div class="hero-content">
+
+      <h1 class="hero-headline">
+     <span class="line">Hi, I'm</span>
+
+     <span class="name-line">
+     <span class="name-text">
+      Shadab Alam
+     </span>
+     </span>
+    </h1>
+    <h2 class="hero-static-role">Software Developer</h2>
+
+      <!-- Role -->
+      <div class="hero-role" id="heroRole">
+        <span class="role-typewriter" id="typewriter"></span>
+        <span class="role-cursor">|</span>
+      </div>
+
+      <!-- Description -->
+      <p class="hero-desc" id="heroDesc">
+        CS graduate with <span class="highlight">hands-on internship experience</span> building
+        RESTful APIs in a production healthcare app using ASP.NET Core (.NET 8), Azure Blob Storage,
+        and <span class="highlight">SQL Server</span>. Eager to grow as a backend developer.
+      </p>
+
+      <!-- Tech stack pills -->
+      <div class="tech-stack" id="techStack">
+        <span class="tech-pill"><i class="fab fa-microsoft"></i> ASP.NET Core</span>
+        <span class="tech-pill"><i class="fas fa-database"></i> SQL Server</span>
+        <span class="tech-pill"><i class="fas fa-layer-group"></i> Entity Framework</span>
+        <span class="tech-pill"><i class="fas fa-cloud"></i> Azure Blob</span>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="hero-ctas" id="heroCtas">
+        <a href="#projects" class="btn btn-primary magnetic">
+          <span class="btn-icon"><i class="fas fa-rocket"></i></span>
+          <span class="btn-text">View Projects</span>
+          <span class="btn-shine"></span>
+        </a>
+        <a href="assets/Shadab_Alam_Resume.pdf" download="Shadab_Alam_Resume.pdf" class="btn btn-secondary magnetic">
+          <span class="btn-icon"><i class="fas fa-download"></i></span>
+          <span class="btn-text">Download Resume</span>
+        </a>
+      </div>
+
+      <!-- Social links -->
+      <div class="hero-socials" id="heroSocials">
+        <a href="https://github.com/Shadab9685" target="_blank" class="social-link" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/shadab-alam-855571249" target="_blank" class="social-link" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;to=Shadabalam9685%40gmail.com&amp;su=Let%27s%20Connect" target="_blank" rel="noopener" class="social-link" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <div class="social-divider"></div>
+        <span class="social-label">Let's connect</span>
+      </div>
+    </div>
+
+    <!-- Right: 3D visual panel -->
+    <div class="hero-visual" id="heroVisual">
+
+      <!-- Floating code panels -->
+      <div class="code-panel panel-1" id="panel1">
+        <div class="panel-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="panel-title">ApiController.cs</span>
+        </div>
+        <div class="panel-body">
+          <pre><code><span class="kw">public class</span> <span class="cl">ProductsController</span> : <span class="cl">ControllerBase</span>
+{
+  <span class="kw">private readonly</span> <span class="cl">IProductService</span> _service;
+
+  [<span class="attr">HttpGet</span>(<span class="str">"/api/products"</span>)]
+  <span class="kw">public async</span> <span class="cl">Task</span>&lt;<span class="cl">IActionResult</span>&gt; GetAll()
+  {
+    <span class="kw">var</span> products = <span class="kw">await</span> _service
+      .GetAllAsync();
+    <span class="kw">return</span> Ok(products);
+  }
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="code-panel panel-2" id="panel2">
+        <div class="panel-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="panel-title">Azure Deploy</span>
+        </div>
+        <div class="panel-body">
+          <div class="terminal-line"><span class="terminal-prompt">$</span> az webapp deploy</div>
+          <div class="terminal-line success"><i class="fas fa-check-circle"></i> Build succeeded</div>
+          <div class="terminal-line success"><i class="fas fa-check-circle"></i> Tests passed (42/42)</div>
+          <div class="terminal-line info"><i class="fas fa-cloud-upload-alt"></i> Deploying to Azure...</div>
+          <div class="terminal-line success"><i class="fas fa-rocket"></i> Live at prod.shadab.dev</div>
+        </div>
+      </div>
+
+      <div class="code-panel panel-3" id="panel3">
+        <div class="panel-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="panel-title">API Response</span>
+        </div>
+        <div class="panel-body">
+          <pre><code><span class="kw">{</span>
+  <span class="str">"status"</span>: <span class="str">"200 OK"</span>,
+  <span class="str">"data"</span>: <span class="kw">[</span>
+    <span class="kw">{</span>
+      <span class="str">"id"</span>: <span class="num">1</span>,
+      <span class="str">"name"</span>: <span class="str">"Product A"</span>,
+      <span class="str">"price"</span>: <span class="num">29.99</span>
+    <span class="kw">}</span>
+  <span class="kw">]</span>,
+  <span class="str">"latency"</span>: <span class="str">"12ms"</span>
+<span class="kw">}</span></code></pre>
+        </div>
+      </div>
+
+      <!-- Live activity bar -->
+      <div class="live-bar">
+        <span class="live-dot"></span>
+        <span>Latency <strong>12ms</strong> &nbsp;·&nbsp; Uptime <strong>99.9%</strong> &nbsp;·&nbsp; Deploy <strong>2h ago</strong></span>
+      </div>
+
+      <!-- Stats cards -->
+      <div class="stat-card stat-1" id="stat1">
+        <div class="stat-icon"><i class="fas fa-plug"></i></div>
+        <div class="stat-info">
+          <div class="stat-number" data-target="8">0</div>
+          <div class="stat-label">APIs Shipped</div>
+        </div>
+      </div>
+
+      <div class="stat-card stat-2" id="stat2">
+        <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+        <div class="stat-info">
+          <div class="stat-number" data-target="3">0</div>
+          <div class="stat-label">Month Internship</div>
+        </div>
+      </div>
+
+      <div class="stat-card stat-3" id="stat3">
+        <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+        <div class="stat-info">
+          <div class="stat-number" data-target="6">0</div>
+          <div class="stat-label">Core Tech</div>
+        </div>
+      </div>
+
+      <!-- Connection nodes SVG -->
+      <svg class="connection-nodes" id="connectionNodes" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="nodeGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#6366f1" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <!-- Lines -->
+        <line class="node-line" x1="200" y1="200" x2="80" y2="80" stroke="#6366f1" stroke-width="1" stroke-dasharray="4 4"/>
+        <line class="node-line" x1="200" y1="200" x2="320" y2="80" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="4 4"/>
+        <line class="node-line" x1="200" y1="200" x2="80" y2="320" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 4"/>
+        <line class="node-line" x1="200" y1="200" x2="320" y2="320" stroke="#6366f1" stroke-width="1" stroke-dasharray="4 4"/>
+        <line class="node-line" x1="200" y1="200" x2="200" y2="60" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="4 4"/>
+        <line class="node-line" x1="200" y1="200" x2="60" y2="200" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 4"/>
+        <line class="node-line" x1="200" y1="200" x2="340" y2="200" stroke="#6366f1" stroke-width="1" stroke-dasharray="4 4"/>
+        <!-- Nodes -->
+        <circle class="node-circle" cx="200" cy="200" r="14" fill="#6366f1" fill-opacity="0.9"/>
+        <circle cx="200" cy="200" r="22" fill="url(#nodeGrad)" opacity="0.5"/>
+        <circle class="node-circle" cx="80" cy="80" r="8" fill="#8b5cf6"/>
+        <circle class="node-circle" cx="320" cy="80" r="6" fill="#06b6d4"/>
+        <circle class="node-circle" cx="80" cy="320" r="10" fill="#6366f1"/>
+        <circle class="node-circle" cx="320" cy="320" r="7" fill="#8b5cf6"/>
+        <circle class="node-circle" cx="200" cy="60" r="5" fill="#06b6d4"/>
+        <circle class="node-circle" cx="60" cy="200" r="9" fill="#6366f1"/>
+        <circle class="node-circle" cx="340" cy="200" r="6" fill="#8b5cf6"/>
+        <!-- Data packets -->
+        <circle class="data-packet" cx="80" cy="80" r="3" fill="#ffffff"/>
+        <circle class="data-packet" cx="320" cy="80" r="3" fill="#ffffff"/>
+        <circle class="data-packet" cx="80" cy="320" r="3" fill="#ffffff"/>
+        <circle class="data-packet" cx="340" cy="200" r="3" fill="#ffffff"/>
+      </svg>
+
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" id="scrollIndicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+
+  </section>
+
+  <!-- ─── About Section ────────────────────────────── -->
+  <section class="about-section" id="about">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 01</span>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">A little background on who I am and what I do</p>
+      </div>
+      <div class="bento-grid">
+
+        <!-- Bio – spans 2 columns -->
+        <div class="bento-card bio-card reveal">
+          <span class="bio-tag">&lt;AboutMe /&gt;</span>
+          <p class="bio-text">
+            I'm a <span class="highlight">Computer Science Engineering graduate</span> with 3 months of
+            hands-on internship experience as a .NET Developer at <span class="highlight">docIndia</span>,
+            a healthcare startup in Gurugram. I built and shipped RESTful APIs in a production application
+            using ASP.NET Core (.NET 8) — covering appointment workflows,
+            <span class="highlight">Azure Blob Storage</span>, SendGrid email integration, and
+            SQL Server interactions. Driven to keep growing in <span class="highlight">backend development</span>.
+          </p>
+        </div>
+
+        <!-- Status / quick facts -->
+        <div class="bento-card status-card reveal">
+          <div class="available-row">
+            <span class="available-dot"></span>
+            <span class="available-label">Open to work</span>
+          </div>
+          <div class="status-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span> India</span>
+          </div>
+          <div class="status-pills">
+            <span class="status-pill">.NET 8</span>
+            <span class="status-pill">C#</span>
+            <span class="status-pill">Azure</span>
+            <span class="status-pill">SQL Server</span>
+            <span class="status-pill">REST APIs</span>
+          </div>
+        </div>
+
+        <!-- B.Tech -->
+        <div class="bento-card edu-card reveal">
+          <div class="bento-icon"><i class="fas fa-graduation-cap"></i></div>
+          <span class="bento-label">Education</span>
+          <div class="bento-title">B.Tech — Computer Science</div>
+          <span class="bento-org">RGPV University · CGPA 7.14</span>
+          <div class="bento-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Bhopal, Madhya Pradesh</span>
+          </div>
+        </div>
+
+        <!-- Diploma -->
+        <div class="bento-card edu-card-2 reveal">
+          <div class="bento-icon"><i class="fas fa-university"></i></div>
+          <span class="bento-label">Education</span>
+          <div class="bento-title">Diploma — Computer Science</div>
+          <span class="bento-org">People's University · CGPA 7.69</span>
+          <div class="bento-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Bhopal, Madhya Pradesh</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Experience Section ──────────────────────────── -->
+  <section class="experience-section" id="experience">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 02</span>
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">Where I've worked and what I built</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-icon"><i class="fas fa-hospital"></i></div>
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Software Developer Intern</h3>
+                <span class="timeline-company">docIndia — Healthcare Startup</span>
+                <div class="timeline-details">
+                  <span><i class="fas fa-calendar-alt"></i> Jan 2025 – Mar 2025 · 3 Months</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Gurugram, India</span>
+                </div>
+              </div>
+              <span class="timeline-badge">Internship</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Built and shipped RESTful APIs for appointment rescheduling, cancellation, and doctor-side acceptance workflows in a live production .NET 8 healthcare app</li>
+              <li>Integrated <strong>Azure Blob Storage</strong> for patient image uploads and managed secure file URLs</li>
+              <li>Wired up <strong>SendGrid</strong> for automated email notifications triggered by appointment events</li>
+              <li>Fixed multiple production bugs across teleconsultation flows, validation pipelines, and API response handling</li>
+              <li>Collaborated with the team using <strong>Git</strong> and participated in code reviews</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>ASP.NET Core (.NET 8)</span>
+              <span>C#</span>
+              <span>SQL Server</span>
+              <span>Azure Blob</span>
+              <span>SendGrid</span>
+              <span>Entity Framework</span>
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Projects Section ──────────────────────────── -->
+  <section class="projects-section" id="projects">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 03</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A selection of work I'm proud of</p>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card featured reveal">
+          <div class="project-top">
+            <div class="project-icon"><i class="fas fa-home"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/Shadab9685" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <span class="project-featured-badge">Personal Project</span>
+          <h3 class="project-name">Airbnb Clone Backend</h3>
+          <p class="project-desc">
+            RESTful Web API simulating an accommodation listing platform. Implements asynchronous CRUD operations,
+            Entity Framework Core with DbContext, GUID-based entity models, and structured API endpoints with
+            proper routing and IActionResult-based response handling.
+          </p>
+          <div class="project-tags">
+            <span>ASP.NET Core Web API</span><span>Entity Framework Core</span><span>SQL Server</span><span>C#</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-top">
+            <div class="project-icon"><i class="fas fa-globe"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/Shadab9685" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3 class="project-name">Developer Portfolio</h3>
+          <p class="project-desc">
+            This portfolio — built from scratch with Three.js for the 3D WebGL background, GSAP for
+            sequenced entrance animations, a custom cursor, magnetic button effects, and fully responsive
+            layout across all devices.
+          </p>
+          <div class="project-tags">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Three.js</span><span>GSAP</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Skills Section ───────────────────────────── -->
+  <section class="skills-section" id="skills">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 04</span>
+        <h2 class="section-title">Skills &amp; Tools</h2>
+        <p class="section-subtitle">Technologies I work with daily</p>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-group reveal">
+          <div class="skill-group-header">
+            <i class="fas fa-code"></i>
+            <h3>Languages &amp; Frameworks</h3>
+          </div>
+          <ul class="skill-list">
+            <li>
+              <span class="skill-name">C# / .NET Core</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+                <span class="skill-pct">80%</span>
+              </div>
+              <span class="skill-badge skill-proficient">Proficient</span>
+            </li>
+            <li>
+              <span class="skill-name">ASP.NET Core Web API</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+                <span class="skill-pct">80%</span>
+              </div>
+              <span class="skill-badge skill-proficient">Proficient</span>
+            </li>
+            <li>
+              <span class="skill-name">Entity Framework Core</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+                <span class="skill-pct">75%</span>
+              </div>
+              <span class="skill-badge skill-proficient">Proficient</span>
+            </li>
+            <li>
+              <span class="skill-name">FluentValidation</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="68"></div></div>
+                <span class="skill-pct">68%</span>
+              </div>
+              <span class="skill-badge skill-intermediate">Intermediate</span>
+            </li>
+            <li>
+              <span class="skill-name">Angular</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="50"></div></div>
+                <span class="skill-pct">50%</span>
+              </div>
+              <span class="skill-badge skill-intermediate">Intermediate</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skill-group reveal">
+          <div class="skill-group-header">
+            <i class="fas fa-database"></i>
+            <h3>Databases</h3>
+          </div>
+          <ul class="skill-list">
+            <li>
+              <span class="skill-name">SQL Server</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="78"></div></div>
+                <span class="skill-pct">78%</span>
+              </div>
+              <span class="skill-badge skill-proficient">Proficient</span>
+            </li>
+            <li>
+              <span class="skill-name">MySQL</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="68"></div></div>
+                <span class="skill-pct">68%</span>
+              </div>
+              <span class="skill-badge skill-intermediate">Intermediate</span>
+            </li>
+            <li>
+              <span class="skill-name">Stored Procedures</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
+                <span class="skill-pct">70%</span>
+              </div>
+              <span class="skill-badge skill-intermediate">Intermediate</span>
+            </li>
+            <li>
+              <span class="skill-name">Joins &amp; Indexes</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="72"></div></div>
+                <span class="skill-pct">72%</span>
+              </div>
+              <span class="skill-badge skill-intermediate">Intermediate</span>
+            </li>
+            <li>
+              <span class="skill-name">Views</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="68"></div></div>
+                <span class="skill-pct">68%</span>
+              </div>
+              <span class="skill-badge skill-intermediate">Intermediate</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skill-group reveal">
+          <div class="skill-group-header">
+            <i class="fas fa-cloud"></i>
+            <h3>Cloud &amp; Tools</h3>
+          </div>
+          <ul class="skill-list">
+            <li>
+              <span class="skill-name">Azure Blob Storage</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="72"></div></div>
+                <span class="skill-pct">72%</span>
+              </div>
+              <span class="skill-badge skill-intermediate">Intermediate</span>
+            </li>
+            <li>
+              <span class="skill-name">SendGrid</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
+                <span class="skill-pct">70%</span>
+              </div>
+              <span class="skill-badge skill-intermediate">Intermediate</span>
+            </li>
+            <li>
+              <span class="skill-name">Git / GitHub</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+                <span class="skill-pct">75%</span>
+              </div>
+              <span class="skill-badge skill-proficient">Proficient</span>
+            </li>
+            <li>
+              <span class="skill-name">Swagger / Postman</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="78"></div></div>
+                <span class="skill-pct">78%</span>
+              </div>
+              <span class="skill-badge skill-proficient">Proficient</span>
+            </li>
+            <li>
+              <span class="skill-name">Visual Studio</span>
+              <div class="skill-bar-wrap">
+                <div class="skill-bar"><div class="skill-fill" data-level="82"></div></div>
+                <span class="skill-pct">82%</span>
+              </div>
+              <span class="skill-badge skill-proficient">Proficient</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skill-group reveal">
+          <div class="skill-group-header">
+            <i class="fas fa-book-open"></i>
+            <h3>Learning / Exposure</h3>
+          </div>
+          <ul class="skill-list">
+            <li>
+              <span class="skill-name">JWT Authentication</span>
+              <div class="skill-dots-row">
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+              </div>
+              <span class="skill-badge skill-exploring">Exploring</span>
+            </li>
+            <li>
+              <span class="skill-name">Redis</span>
+              <div class="skill-dots-row">
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+              </div>
+              <span class="skill-badge skill-exploring">Exploring</span>
+            </li>
+            <li>
+              <span class="skill-name">SignalR</span>
+              <div class="skill-dots-row">
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+              </div>
+              <span class="skill-badge skill-exploring">Exploring</span>
+            </li>
+            <li>
+              <span class="skill-name">Azure Service Bus</span>
+              <div class="skill-dots-row">
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+              </div>
+              <span class="skill-badge skill-exploring">Exploring</span>
+            </li>
+            <li>
+              <span class="skill-name">OpenIddict / FCM</span>
+              <div class="skill-dots-row">
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+              </div>
+              <span class="skill-badge skill-exploring">Exploring</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact Section ──────────────────────────── -->
+  <section class="contact-section" id="contact">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">// 05</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">I'm open to new opportunities and collaborations</p>
+      </div>
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+          <p class="contact-blurb">
+            Whether you have a project in mind, a role to fill, or just want to talk tech —
+            my inbox is always open. I'll do my best to get back to you promptly.
+          </p>
+          <div class="contact-items">
+            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;to=Shadabalam9685%40gmail.com&amp;su=Let%27s%20Connect" target="_blank" rel="noopener" class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <span class="contact-item-label">Email</span>
+                <span class="contact-item-value">Shadabalam9685@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/shadab-alam-855571249" target="_blank" class="contact-item">
+              <div class="contact-item-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div>
+                <span class="contact-item-label">LinkedIn</span>
+                <span class="contact-item-value">linkedin.com/in/shadab-alam</span>
+              </div>
+            </a>
+            <a href="https://github.com/Shadab9685" target="_blank" class="contact-item">
+              <div class="contact-item-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <span class="contact-item-label">GitHub</span>
+                <span class="contact-item-value">github.com/Shadab9685</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-group">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="contactMsg">Message</label>
+            <textarea id="contactMsg" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary magnetic" id="submitBtn">
+            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+            <span class="btn-text">Send Message</span>
+            <span class="btn-shine"></span>
+          </button>
+          <p class="form-success" id="formSuccess">Message sent! I'll get back to you soon.</p>
+          <p class="form-error" id="formError">Something went wrong. Please try again.</p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="nav-logo">
+        <span class="logo-name">Shadab Alam</span>
+      </div>
+      <p class="footer-copy">© 2025 Shadab Alam. Built with passion and a lot of coffee.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/Shadab9685" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/shadab-alam-855571249" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;to=Shadabalam9685%40gmail.com&amp;su=Let%27s%20Connect" target="_blank" rel="noopener"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── Back to Top ─────────────────────────────────── -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+    <span class="tooltip">Back to Top</span>
+  </button>
+
+  <!-- ─── Spotlight ──────────────────────────────────── -->
+  <div class="spotlight" id="spotlight"></div>
+
+  <!-- Scripts -->
+  <script src="js/hero.js"></script>
+</body>
+</html>
