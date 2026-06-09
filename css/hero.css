@@ -891,13 +891,13 @@ h2.hero-role {
   /* Three.js: tone it down so it doesn't overpower the content */
   #heroCanvas { opacity: 0.3; }
 
-  /* Section spacing — 8rem is too tall on tablets/phones */
+  /* Section spacing — tighter on tablets */
   .about-section,
   .projects-section,
   .skills-section,
-  .contact-section { padding: 5rem 0; }
-  .experience-section { padding: 4rem 0; }
-  .section-header { margin-bottom: 3rem; }
+  .contact-section { padding: 3rem 0; }
+  .experience-section { padding: 3rem 0; }
+  .section-header { margin-bottom: 2.5rem; }
 
   /* About bento — 2 col on tablets, collapses further below */
   .bento-grid { grid-template-columns: repeat(2, 1fr); }
@@ -923,9 +923,9 @@ h2.hero-role {
   .about-section,
   .projects-section,
   .skills-section,
-  .contact-section { padding: 3.5rem 0; }
-  .experience-section { padding: 3.5rem 0; }
-  .section-header { margin-bottom: 2rem; }
+  .contact-section,
+  .experience-section { padding: 2.5rem 0; }
+  .section-header { margin-bottom: 1.75rem; }
 
   /* Timeline */
   .timeline-card { padding: 1.25rem; }
@@ -1032,7 +1032,7 @@ section[id] {
    ABOUT – BENTO GRID
    ================================================================ */
 .about-section {
-  padding: 5.5rem 0;
+  padding: 3.5rem 0;
   position: relative;
 }
 
@@ -1219,7 +1219,7 @@ section[id] {
    PROJECTS
    ================================================================ */
 .projects-section {
-  padding: 5.5rem 0;
+  padding: 3.5rem 0;
   background: linear-gradient(180deg, transparent, rgba(99,102,241,0.03) 50%, transparent);
 }
 
@@ -1345,7 +1345,7 @@ section[id] {
    SKILLS
    ================================================================ */
 .skills-section {
-  padding: 5.5rem 0;
+  padding: 3.5rem 0;
 }
 
 .skills-grid {
@@ -1518,7 +1518,7 @@ section[id] {
    CONTACT
    ================================================================ */
 .contact-section {
-  padding: 5.5rem 0;
+  padding: 3.5rem 0;
   background: linear-gradient(180deg, transparent, rgba(99,102,241,0.03) 50%, transparent);
 }
 
@@ -1654,7 +1654,7 @@ section[id] {
 /* ================================================================
    EXPERIENCE SECTION
    ================================================================ */
-.experience-section { padding: 5rem 0; }
+.experience-section { padding: 3.5rem 0; }
 
 .timeline {
   position: relative;
@@ -2019,8 +2019,8 @@ section[id] {
   .projects-section,
   .skills-section,
   .contact-section,
-  .experience-section { padding: 3rem 0; }
-  .section-header { margin-bottom: 1.75rem; }
+  .experience-section { padding: 2rem 0; }
+  .section-header { margin-bottom: 1.5rem; }
 
   .project-card { padding: 1.25rem; }
   .skill-group  { padding: 1.25rem; }
