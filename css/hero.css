@@ -1026,26 +1026,9 @@ h2.hero-role {
   /* Three.js: tone it down so it doesn't overpower the content */
   #heroCanvas { opacity: 0.3; }
 
-  /* Back to top — reposition tooltip above button, always show on mobile */
+  /* Back to top — hide tooltip on touch/mobile, it clips and has no hover */
   .back-to-top .tooltip {
-    right: auto;
-    left: 50%;
-    top: auto;
-    bottom: calc(100% + 10px);
-    transform: translateX(-50%);
-  }
-  .back-to-top .tooltip::after {
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 0;
-    border: 5px solid transparent;
-    border-top-color: rgba(99,102,241,0.25);
-    border-left-color: transparent;
-  }
-  .back-to-top.visible .tooltip {
-    opacity: 1;
-    visibility: visible;
+    display: none;
   }
 
   /* Section spacing — tighter on tablets */
