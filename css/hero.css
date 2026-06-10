@@ -632,7 +632,6 @@ h2.hero-role {
 
 .panel-body {
   padding: 0.9rem 1rem;
-  position: relative;
 }
 
 .panel-body pre {
@@ -641,18 +640,6 @@ h2.hero-role {
   font-family: var(--font-mono);
   line-height: 1.7;
   overflow: hidden;
-  max-height: 200px;
-}
-
-/* Fade out at the bottom so truncated code looks intentional */
-.panel-body::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 2.5rem;
-  background: linear-gradient(to bottom, transparent, rgba(10,15,30,0.85));
-  pointer-events: none;
-  border-radius: 0 0 12px 12px;
 }
 
 .panel-body code { display: block; }
@@ -909,8 +896,18 @@ h2.hero-role {
     transform: translateY(-6px) scale(1.02) !important;
   }
 
-  /* Tighter code font so long lines don't clip */
-  .panel-body pre { font-size: 0.65rem; }
+  /* Tighter code font + fade so long lines look intentional, not clipped */
+  .panel-body { position: relative; }
+  .panel-body pre { font-size: 0.65rem; max-height: 210px; }
+  .panel-body::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2.5rem;
+    background: linear-gradient(to bottom, transparent, rgba(10,15,30,0.85));
+    pointer-events: none;
+    border-radius: 0 0 12px 12px;
+  }
 
   /* Hide clutter — stat cards overlap the single panel */
   .stat-1, .stat-2, .stat-3 { display: none; }
