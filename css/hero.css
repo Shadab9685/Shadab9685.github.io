@@ -914,6 +914,28 @@ h2.hero-role {
   /* Three.js: tone it down so it doesn't overpower the content */
   #heroCanvas { opacity: 0.3; }
 
+  /* Back to top — reposition tooltip above button, always show on mobile */
+  .back-to-top .tooltip {
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+  }
+  .back-to-top .tooltip::after {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    border: 5px solid transparent;
+    border-top-color: rgba(99,102,241,0.25);
+    border-left-color: transparent;
+  }
+  .back-to-top.visible .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+
   /* Section spacing — tighter on tablets */
   .about-section,
   .projects-section,
@@ -978,29 +1000,6 @@ h2.hero-role {
 
   /* Bento */
   .bento-card { padding: 1.25rem; }
-
-  /* Back to top — reposition tooltip above button on touch screens */
-  .back-to-top .tooltip {
-    right: auto;
-    left: 50%;
-    top: auto;
-    bottom: calc(100% + 10px);
-    transform: translateX(-50%);
-  }
-  .back-to-top .tooltip::after {
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 0;
-    border: 5px solid transparent;
-    border-top-color: rgba(99,102,241,0.25);
-    border-left-color: transparent;
-  }
-  /* Always show tooltip when button is visible — no hover needed on mobile */
-  .back-to-top.visible .tooltip {
-    opacity: 1;
-    visibility: visible;
-  }
 }
 
 /* ================================================================
