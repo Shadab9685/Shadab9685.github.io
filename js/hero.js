@@ -2,12 +2,16 @@
    HERO.JS — Three.js 3D scene + GSAP entrance + interactions
    ================================================================ */
 
-/* ── 0. PAGE LOADER ────────────────────────────────────────────── */
+/* ── 0. PAGE LOADER + SCROLL RESTORE ──────────────────────────── */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
 window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
   setTimeout(() => {
     const loader = document.getElementById('pageLoader');
     if (loader) loader.classList.add('hidden');
-  }, 1500);
+  }, 300);
 });
 
 /* ── 1. Typewriter ─────────────────────────────────────────────── */
@@ -279,6 +283,9 @@ document.querySelectorAll('.magnetic').forEach((btn) => {
   btn.addEventListener('mouseleave', () => {
     btn.style.transform = '';
   });
+  btn.addEventListener('mousedown', () => {
+    btn.style.transform = '';
+  });
 });
 
 /* ── 5. Navbar scroll effect ───────────────────────────────────── */
@@ -413,11 +420,19 @@ window.addEventListener('scroll', () => {
 const navToggle = document.getElementById('navToggle');
 const navLinksList = document.querySelector('.nav-links');
 
+const MOBILE_MENU_OPEN = 'display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(3,7,18,0.96);padding:1.5rem;gap:1.5rem;backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);';
+
+function closeMobileMenu() {
+  navLinksList.style.cssText = '';
+}
+
 navToggle.addEventListener('click', () => {
   const open = navLinksList.style.display === 'flex';
-  navLinksList.style.cssText = open
-    ? ''
-    : 'display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(3,7,18,0.96);padding:1.5rem;gap:1.5rem;backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);';
+  navLinksList.style.cssText = open ? '' : MOBILE_MENU_OPEN;
+});
+
+navLinksList.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', closeMobileMenu);
 });
 
 /* ── 11. Scroll reveal (sections) ──────────────────────────────── */
