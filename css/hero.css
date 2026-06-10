@@ -632,6 +632,7 @@ h2.hero-role {
 
 .panel-body {
   padding: 0.9rem 1rem;
+  position: relative;
 }
 
 .panel-body pre {
@@ -640,6 +641,18 @@ h2.hero-role {
   font-family: var(--font-mono);
   line-height: 1.7;
   overflow: hidden;
+  max-height: 200px;
+}
+
+/* Fade out at the bottom so truncated code looks intentional */
+.panel-body::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2.5rem;
+  background: linear-gradient(to bottom, transparent, rgba(10,15,30,0.85));
+  pointer-events: none;
+  border-radius: 0 0 12px 12px;
 }
 
 .panel-body code { display: block; }
@@ -876,12 +889,28 @@ h2.hero-role {
 
   /* Deck above text */
   .hero-visual {
-    height: 380px;
+    height: 320px;
     width: 100%;
     max-width: 520px;
     margin: 0 auto;
     order: -1;
   }
+
+  /* Show only one card, centered */
+  .panel-2, .panel-3 { display: none; }
+  .panel-1 {
+    width: 88%;
+    left: 6%;
+    top: 18px;
+  }
+
+  /* Smaller lift so panel-top doesn't escape the container */
+  .code-panel.panel-top {
+    transform: translateY(-6px) scale(1.02) !important;
+  }
+
+  /* Tighter code font so long lines don't clip */
+  .panel-body pre { font-size: 0.65rem; }
 
   /* Hide clutter — stat cards overlap the single panel */
   .stat-1, .stat-2, .stat-3 { display: none; }
@@ -910,10 +939,10 @@ h2.hero-role {
   .btn { width: 100%; justify-content: center; }
 
   /* Smaller deck on phones */
-  .hero-visual { height: 260px; }
+  .hero-visual { height: 280px; }
 
-  .panel-2, .panel-3 { display: none; }
-  .panel-1 { width: 90%; left: 5%; top: 8px; }
+  .panel-1 { width: 92%; left: 4%; top: 22px; }
+  .panel-body pre { font-size: 0.6rem; }
 
   /* About bento — 1 column on phones */
   .bento-grid { grid-template-columns: 1fr; }
