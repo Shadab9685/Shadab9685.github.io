@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712"/>
+      <stop offset="100%" stop-color="#0a0f1e"/>
+    </linearGradient>
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f1f5f9"/>
+      <stop offset="40%" stop-color="#c7d2fe"/>
+      <stop offset="70%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#6366f1" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Background orbs -->
+  <circle cx="900" cy="150" r="280" fill="#6366f1" fill-opacity="0.06"/>
+  <circle cx="200" cy="500" r="200" fill="#8b5cf6" fill-opacity="0.05"/>
+  <circle cx="1050" cy="500" r="150" fill="#06b6d4" fill-opacity="0.04"/>
+
+  <!-- Grid dots pattern -->
+  <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1" fill="#ffffff" fill-opacity="0.04"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#accentLine)"/>
+
+  <!-- SA Badge -->
+  <rect x="80" y="80" width="72" height="72" rx="18" fill="url(#badgeGrad)"/>
+  <text x="116" y="128" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">SA</text>
+
+  <!-- Name -->
+  <text x="80" y="290" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="url(#nameGrad)" letter-spacing="-2">Shadab Alam</text>
+
+  <!-- Role -->
+  <text x="80" y="358" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500" fill="#818cf8" letter-spacing="1">Software Developer  ·  .NET Backend Engineer</text>
+
+  <!-- Divider line -->
+  <rect x="80" y="390" width="120" height="3" rx="2" fill="#6366f1"/>
+
+  <!-- Tech pills -->
+  <rect x="80" y="420" width="90" height="34" rx="8" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="125" y="443" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="500" fill="#a5b4fc" text-anchor="middle">C#</text>
+
+  <rect x="184" y="420" width="150" height="34" rx="8" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="259" y="443" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="500" fill="#a5b4fc" text-anchor="middle">ASP.NET Core</text>
+
+  <rect x="348" y="420" width="130" height="34" rx="8" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="413" y="443" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="500" fill="#a5b4fc" text-anchor="middle">SQL Server</text>
+
+  <rect x="492" y="420" width="110" height="34" rx="8" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="547" y="443" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="500" fill="#a5b4fc" text-anchor="middle">Azure</text>
+
+  <!-- URL -->
+  <text x="80" y="555" font-family="Inter, monospace, Arial, sans-serif" font-size="22" font-weight="400" fill="#4b5563" letter-spacing="0.5">shadab9685.github.io</text>
+
+  <!-- Decorative geometric shapes (right side) -->
+  <g opacity="0.15" transform="translate(920, 200)">
+    <polygon points="100,0 200,173 0,173" fill="none" stroke="#6366f1" stroke-width="1.5"/>
+    <polygon points="100,30 170,150 30,150" fill="none" stroke="#8b5cf6" stroke-width="1"/>
+  </g>
+  <circle cx="1050" cy="350" r="80" fill="none" stroke="#6366f1" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="6 4"/>
+  <circle cx="1050" cy="350" r="50" fill="none" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.3"/>
+  <circle cx="1050" cy="350" r="10" fill="#6366f1" fill-opacity="0.5"/>
+
+  <!-- Bottom border -->
+  <rect x="0" y="627" width="1200" height="3" fill="url(#accentLine)"/>
+</svg>

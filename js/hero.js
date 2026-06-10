@@ -2,6 +2,14 @@
    HERO.JS — Three.js 3D scene + GSAP entrance + interactions
    ================================================================ */
 
+/* ── 0. PAGE LOADER ────────────────────────────────────────────── */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const loader = document.getElementById('pageLoader');
+    if (loader) loader.classList.add('hidden');
+  }, 1500);
+});
+
 /* ── 1. Typewriter ─────────────────────────────────────────────── */
 const ROLES = [
   'Software Developer',

@@ -43,6 +43,95 @@ body {
 .cursor-follower { display: none; }
 
 /* ================================================================
+   PAGE LOADER
+   ================================================================ */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #030712;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.page-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.loader-badge {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  animation: loaderPulse 1.2s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(99,102,241,0.4);
+}
+
+@keyframes loaderPulse {
+  0%, 100% { transform: scale(1);    box-shadow: 0 0 40px rgba(99,102,241,0.3); }
+  50%       { transform: scale(1.08); box-shadow: 0 0 60px rgba(99,102,241,0.55); }
+}
+
+.loader-bar {
+  width: 180px;
+  height: 3px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.loader-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4);
+  border-radius: 999px;
+  animation: loaderProgress 1.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes loaderProgress {
+  0%   { width: 0%; }
+  60%  { width: 75%; }
+  100% { width: 100%; }
+}
+
+.loader-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #4b5563;
+  letter-spacing: 0.05em;
+}
+
+.loader-dots::after {
+  content: '';
+  animation: loaderDots 1.2s steps(4, end) infinite;
+}
+
+@keyframes loaderDots {
+  0%   { content: ''; }
+  25%  { content: '.'; }
+  50%  { content: '..'; }
+  75%  { content: '...'; }
+  100% { content: ''; }
+}
+
+/* ================================================================
    THREE.JS CANVAS
    ================================================================ */
 #heroCanvas {
@@ -493,6 +582,29 @@ h2.hero-role {
   transform: translateY(-2px);
   background: rgba(99,102,241,0.08);
   border-color: var(--indigo);
+}
+
+/* Resume wrap + updated label */
+.resume-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.resume-updated {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-left: 0.2rem;
+}
+
+.resume-updated i {
+  color: #22c55e;
+  font-size: 0.68rem;
 }
 
 /* Social links */

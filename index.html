@@ -13,14 +13,18 @@
 
   <!-- Open Graph (LinkedIn, WhatsApp, Facebook previews) -->
   <meta property="og:title" content="Shadab Alam — Software Developer" />
-  <meta property="og:description" content="CS graduate with hands-on experience building RESTful APIs in a production healthcare app using ASP.NET Core, Azure Blob Storage, and SQL Server." />
+  <meta property="og:description" content="CS graduate with hands-on experience building RESTful APIs using ASP.NET Core (.NET 8), Azure Blob Storage, and SQL Server. Strong foundation in C# and backend development." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shadab9685.github.io" />
+  <meta property="og:image" content="https://shadab9685.github.io/assets/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Shadab Alam — Software Developer" />
-  <meta name="twitter:description" content="CS graduate with hands-on experience building RESTful APIs in a production healthcare app using ASP.NET Core, Azure Blob Storage, and SQL Server." />
+  <meta name="twitter:description" content="CS graduate with hands-on experience building RESTful APIs using ASP.NET Core (.NET 8), Azure Blob Storage, and SQL Server." />
+  <meta name="twitter:image" content="https://shadab9685.github.io/assets/og-image.svg" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -52,6 +56,15 @@
   <link rel="stylesheet" href="css/hero.css" />
 </head>
 <body>
+
+  <!-- ─── Page Loader ─────────────────────────────── -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div class="loader-badge">SA</div>
+      <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+      <p class="loader-label">Loading portfolio<span class="loader-dots"></span></p>
+    </div>
+  </div>
 
   <!-- ─── Scroll Progress Bar ──────────────────────── -->
   <div class="scroll-progress" id="scrollProgress"></div>
@@ -144,10 +157,13 @@
           <span class="btn-text">View Projects</span>
           <span class="btn-shine"></span>
         </a>
-        <a href="assets/Shadab_Alam_Resume.pdf" download="Shadab_Alam_Resume.pdf" class="btn btn-secondary magnetic">
-          <span class="btn-icon"><i class="fas fa-download"></i></span>
-          <span class="btn-text">Download Resume</span>
-        </a>
+        <div class="resume-wrap">
+          <a href="assets/Shadab_Alam_Resume.pdf" download="Shadab_Alam_Resume.pdf" class="btn btn-secondary magnetic">
+            <span class="btn-icon"><i class="fas fa-download"></i></span>
+            <span class="btn-text">Download Resume</span>
+          </a>
+          <span class="resume-updated"><i class="fas fa-circle-check"></i> Updated Jun 2026</span>
+        </div>
       </div>
 
       <!-- Social links -->
