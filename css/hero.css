@@ -883,13 +883,10 @@ h2.hero-role {
     order: -1;
   }
 
-  /* Show only one card, centered */
-  .panel-2, .panel-3 { display: none; }
-  .panel-1 {
-    width: 88%;
-    left: 6%;
-    top: 18px;
-  }
+  /* Tight deck — all 3 panels visible, stacked with tiny offset */
+  .panel-1 { width: 88%; left: 6%;  top: 18px; }
+  .panel-2 { width: 88%; left: 6%;  top: 24px; }
+  .panel-3 { width: 88%; left: 6%;  top: 30px; }
 
   /* Smaller lift so panel-top doesn't escape the container */
   .code-panel.panel-top {
@@ -939,6 +936,8 @@ h2.hero-role {
   .hero-visual { height: 280px; }
 
   .panel-1 { width: 92%; left: 4%; top: 22px; }
+  .panel-2 { width: 92%; left: 4%; top: 28px; }
+  .panel-3 { width: 92%; left: 4%; top: 34px; }
   .panel-body pre { font-size: 0.6rem; }
 
   /* About bento — 1 column on phones */
